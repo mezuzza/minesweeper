@@ -21,6 +21,11 @@ const config: webpack.Configuration = {
       },
     ],
   },
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 9000,
+  },
 };
 
 export default config;
