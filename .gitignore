@@ -37,6 +37,8 @@ Thumbs.db
 # Ignore built ts files
 dist/**/*
 !dist/index.html
+!dist/flag.svg
+!dist/bomb.png
 
 # ignore yarn.lock
 yarn.lock

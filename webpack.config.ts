@@ -11,6 +11,7 @@ const config: webpack.Configuration = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
+    modules: [path.join(__dirname, './src'), 'node_modules'],
   },
   module: {
     rules: [
