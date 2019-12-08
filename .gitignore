@@ -25,6 +25,7 @@ coverage
 # Dependency directory
 node_modules
 bower_components
+elm-stuff
 
 # Editors
 .idea
@@ -36,7 +37,8 @@ Thumbs.db
 
 # Ignore built ts files
 dist/**/*
-!dist/index.html
+!dist/typescript.html
+!dist/elm.html
 !dist/flag.svg
 !dist/bomb.png
 

@@ -3,10 +3,13 @@ import * as webpack from 'webpack';
 
 const config: webpack.Configuration = {
   mode: 'development',
-  entry: './src/index.tsx',
+  entry: {
+    typescript: './src/typescript.tsx',
+    elm: './src/Minesweeper.elm',
+  },
   devtool: 'source-map',
   output: {
-    filename: 'main.js',
+    filename: 'minesweeper-[name].js',
     path: path.resolve(__dirname, 'dist'),
   },
   resolve: {
@@ -19,6 +22,14 @@ const config: webpack.Configuration = {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
+      },
+      {
+        test: /\.elm$/,
+        exclude: [/elm-stuff/, /node_modules/],
+        use: {
+          loader: 'elm-webpack-loader',
+          options: {},
+        },
       },
     ],
   },
