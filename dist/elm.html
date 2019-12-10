@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <script src="./minesweeper-elm.js"></script>
+    <script src="./dist/minesweeper-elm.js"></script>
 </head>
 
 <body>
@@ -11,7 +11,12 @@
 
     <script>
         var app = Elm.Minesweeper.init({
-            node: document.getElementById('elm')
+            node: document.getElementById('elm'),
+			flags: {
+				rows: 10,
+				columns: 10,
+				numBombs: 10
+			}
         });
     </script>
 </body>

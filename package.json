@@ -40,7 +40,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "webpack",
         "dev": "webpack-dev-server",
-        "dev-elm": "elm-live src/Minesweeper.elm"
+        "dev-elm": "elm-live src/Minesweeper.elm --start-page=./dist/elm.html -- --output=./dist/minesweeper-elm.js"
     },
     "author": "",
     "license": "ISC"
