@@ -14,7 +14,7 @@ const useStyles = createUseStyles({
     width: 'fit-content',
     height: 'auto',
     gridTemplateColumns: 'auto',
-    gridTemplateRows: 'repeat(10, auto)',
+	  gridTemplateRows: (p: Props) => 'repeat(' + p.rows + ' , auto)',
 
     borderStyle: 'solid',
     borderWidth: 10,
@@ -24,7 +24,7 @@ const useStyles = createUseStyles({
     display: 'grid',
     width: 'auto',
     height: 'auto',
-    gridTemplateColumns: 'repeat(10, auto)',
+	  gridTemplateColumns: (p: Props) => 'repeat(' + p.columns + ' , auto)',
     gridTemplateRows: 'auto',
   },
 });
@@ -45,7 +45,7 @@ const chooseBombLocations = (p: Props) => {
 };
 
 export const Minesweeper = (p: Props) => {
-  const classes = useStyles();
+  const classes = useStyles(p);
   const [bombLocations] = useState(() => chooseBombLocations(p));
   const [cellStates, setCellStates] = useState(() =>
     _.times(p.rows, () => _.times(p.columns, () => CellState.UNKNOWN)),
